@@ -1,0 +1,42 @@
+1 a) int double String boolean
+  b) VALID INVALID INVALID VALID
+  c) Total: 120
+             done
+     The difference is that println() has an enter at the end of the line while print() doesn't.
+2 a) 12
+  b) Hello Java
+  c) 7
+  d) ava 
+  e)  hello java 
+  f) e
+  g)  Hello Python 
+  h) HELLOJAVA
+3 a)
+  1  10 5  /  /  
+  2  10 5  20 run1: 10 20
+  3  10 5  11 run2: 10 11
+  4  10 5  5  main: 10 5 
+  b) Because the step inside run2() is the local variable step in the function, while the step printed in main() is the global variable step. 
+  c) ADVANTAGE: It can be used more convenient between functions.
+     DISADVANTAGE: It is hard to find the part if there is some problem in the program.
+4 int myAge = 16;
+  double perCost = 15.5;
+  char myChoice = 'A';
+  String myName = "Jessica";
+  boolean isFemale = TRUE;
+  System.output.println(perCost);
+  System.output.print(myChoice);
+  System.output.println(myName + " is " + myAge + " years old . " );
+  System.output.println(isFemale);
+5 
+  System.output.println(customer.substring(0,15));//a)
+  int salaryPosition = customer.indexOf("4500");
+  System.output.println(customer.substring(16,salaryPosition-1));//b)
+  System.output.println(customer.substring(25.salaryPosition-1));//c)
+  System.output.println(customer.substring(salaryPosition);//d)
+  System.output.println(toUpperCase(customer.substring(0,15));//e)
+6 a) The local variable total has not been declared so it could not give value to itself.
+  b) static void add() {
+        total = total+5;
+     }
+  c) A local variable can only be used in one function while a global variable can be used in all functions and also the main program.
