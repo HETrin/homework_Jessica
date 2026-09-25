@@ -1,0 +1,148 @@
+Homework 20260924
+
+Q1
+(a)
+Small
+Done
+
+(b)
+score = 85:
+B
+
+score = 59:
+F
+
+(c)
+false
+true
+false
+
+(d)
+grade = 55:
+Failed
+Take re-sit
+
+grade = 75:
+Passed
+Take re-sit
+
+Explanation: The if-else only controls the first line after it. When grade is 75, it prints "Passed". The line "Take re-sit" is not inside the else block, so it always prints. That is why "Take re-sit" appears in both cases.
+
+Q2
+(a)
+1 2 3 4 5 END
+
+(b)
+Sum is: 30
+
+(c)
+15
+
+(d)
+10
+
+Q3
+(a) Trace Table:
+n | n <= 5 | n % 2 == 0 | total | Output
+1 | true   | false      | 1     |
+2 | true   | true       | 21    |
+3 | true   | false      | 24    |
+4 | true   | true       | 64    |
+5 | true   | false      | 69    |
+6 | false  |            |       | Total: 69
+
+(b)
+Total: 69
+
+(c)
+n++ increases n by 1. It makes the loop stop. If we remove it, n stays 1, the loop never ends, and the program runs forever.
+
+Q4
+import java.util.Scanner;
+
+public class MarkGrade {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int mark = scan.nextInt();
+        
+        if (mark < 0 || mark > 100) {
+            System.out.println("Invalid mark");
+        } else if (mark >= 90) {
+            System.out.println("A");
+        } else if (mark >= 80) {
+            System.out.println("B");
+        } else if (mark >= 70) {
+            System.out.println("C");
+        } else if (mark >= 60) {
+            System.out.println("D");
+        } else {
+            System.out.println("F");
+        }
+    }
+}
+
+Q5
+import java.util.Scanner;
+
+public class TenNumbers {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int sum = 0;
+        int pos = 0;
+        int neg = 0;
+        
+        for (int i = 0; i < 10; i++) {
+            int num = scan.nextInt();
+            sum = sum + num;
+            
+            if (num > 0) {
+                pos++;
+            } else if (num < 0) {
+                neg++;
+            }
+        }
+        
+        System.out.println("Sum: " + sum);
+        System.out.println("Positive: " + pos);
+        System.out.println("Negative: " + neg);
+    }
+}
+
+Q6
+(a)
+import java.util.Scanner;
+
+public class MarkAnalyzer {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = 0;
+        int sum = 0;
+        int max = -1;
+        
+        int value = scan.nextInt();
+        while (value != -1) {
+            count++;
+            sum = sum + value;
+            
+            if (value > max) {
+                max = value;
+            }
+            
+            value = scan.nextInt();
+        }
+        
+        System.out.println("Count: " + count);
+        System.out.println("Sum: " + sum);
+        
+        if (count > 0) {
+            double avg = (double) sum / count;
+            System.out.println("Average: " + avg);
+            System.out.println("Largest: " + max);
+        } else {
+            System.out.println("No valid values.");
+        }
+    }
+}
+
+(b)
+We must read the first value before the loop because the while condition needs it. If we only read inside the loop, the value is not ready before the check. This causes an error. Reading it first lets the user enter -1 right away to skip the loop.
