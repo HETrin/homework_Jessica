@@ -1,0 +1,135 @@
+Homework 20261001
+
+Q1
+(a)
+10
+5
+
+(b)
+Hello, Alex
+Hello, Evelyn
+
+(c)
+A
+7
+Explanation: show() returns nothing (void), so it cannot be put inside System.out.println(). println() needs a value to print.
+
+(d)
+6
+100
+Explanation: The y in the method is a local variable. It is different from the y in main. Changing the local y does not affect the y in main.
+
+Q2
+(a)
+10
+21
+
+(b)
+22
+5
+
+(c)
+3
+4
+
+(d)
+***
+*
+
+Q3
+(a) Trace Table:
+i | n | returned by next() | calls | total | Output
+1 | 1 | 2                  | 1     | 2     |
+2 | 2 | 4                  | 2     | 6     |
+3 | 3 | 6                  | 3     | 12    |
+  |   |                    |       |       | Total: 12
+  |   |                    |       |       | Calls: 3
+
+(b)
+Total: 12
+Calls: 3
+
+(c)
+'calls' is a static variable. It belongs to the class, so it keeps its value between method calls. 'n' is a parameter. It is local to the method. Every time the method is called, 'n' is created again and gets a new value.
+
+Q4
+import java.util.Scanner;
+
+public class MaxNumber {
+    public static double maximum(double a, double b, double c) {
+        double max = a;
+        if (b > max) {
+            max = b;
+        }
+        if (c > max) {
+            max = c;
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double num1 = scan.nextDouble();
+        double num2 = scan.nextDouble();
+        double num3 = scan.nextDouble();
+        double result = maximum(num1, num2, num3);
+        System.out.println("Largest: " + result);
+    }
+}
+
+Q5
+import java.util.Scanner;
+
+public class VowelCounter {
+    public static int countVowels(String s) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String line = scan.nextLine();
+        int result = countVowels(line);
+        System.out.println("Vowels: " + result);
+    }
+}
+
+Q6
+import java.util.Scanner;
+
+public class PrimeFinder {
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int limit = scan.nextInt();
+        int count = 0;
+        
+        for (int i = 2; i <= limit; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+                count++;
+            }
+        }
+        
+        System.out.println();
+        System.out.println("Count: " + count);
+    }
+}
